@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <!-- navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container justify-content-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container justify-content-center py-1">
         <div
           class="d-flex flex-row justify-content-between align-items-center col-9"
         >
@@ -352,10 +352,12 @@
             </div>
             <!-- side-profile end -->
 
-            <!-- suggest-field start -->
+            <!-- side-suggest start -->
             <div class="mt-4">
               <div class="d-flex flex-row justify-content-between">
-                <small class="text-black-50 fw-bold">Suggestions For You</small>
+                <small class="text-black-50 fw-bold mb-2"
+                  >Suggestions For You</small
+                >
                 <small>See All</small>
               </div>
 
@@ -383,7 +385,7 @@
                 </div>
               </div>
             </div>
-            <!-- suggest-field end -->
+            <!-- side-suggest end -->
           </div>
           <!-- side-bar end -->
         </div>
