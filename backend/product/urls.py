@@ -1,6 +1,7 @@
 from django.urls import path, include
-from product import views
+from .views import  FeedList, FeedDetail
 
 urlpatterns = [
-    path('', views.FeedList.as_view()),
+    path('', FeedList.as_view()),
+    path('feed-detail/<int:feed_id>/', FeedDetail.as_view()),
 ]
