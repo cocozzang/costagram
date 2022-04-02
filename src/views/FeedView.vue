@@ -1,7 +1,7 @@
 <template>
   <!-- main feed page start -->
   <div
-    class="feed wrapper container d-flex justify-content-center mt-5 pt-5"
+    class="feed wrapper container d-flex justify-content-center"
     style="background-color: #fafafa"
   >
     <div class="col-9">

@@ -118,7 +118,7 @@
               </li>
 
               <li class="list-inline-item align-middle ms-3">
-                <a href="#" class="link-menu">
+                <a href="/profile" class="link-menu">
                   <div
                     class="rounded-circle overflow-hidden d-flex justify-content-conter align-items-center topbar-profile-photo"
                   >
