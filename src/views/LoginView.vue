@@ -48,20 +48,21 @@ export default {
     };
   },
   methods: {
-    async submitForm() {
+    submitForm() {
       axios.defaults.headers.common["Authorization"] = "";
       localStorage.removeItem("token");
       const formData = {
         username: this.username,
         password: this.password,
       };
-      await axios
+      axios
         .post("http://127.0.0.1:8000/auth/token/login/", formData)
         .then((response) => {
           const token = response.data.auth_token;
           this.$store.commit("setToken", token);
           axios.defaults.headers.common["Authorization"] = "Token " + token;
           localStorage.setItem("token", token);
+          localStorage.setItem("isAuthenticated", true);
 
           this.$router.push("/");
         })

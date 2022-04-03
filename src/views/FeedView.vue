@@ -11,7 +11,7 @@
           <div class="card">
             <div class="card-body d-flex justfy-content-start">
               <ul class="list-inline mb-0">
-                <list class="list-inline-iten">
+                <li class="list-inline-item align-conent-center">
                   <button class="btn p-0 m-0">
                     <div class="d-flex flex-column align-items-center">
                       <div
@@ -30,7 +30,7 @@
                       <small>cat1</small>
                     </div>
                   </button>
-                </list>
+                </li>
               </ul>
             </div>
           </div>

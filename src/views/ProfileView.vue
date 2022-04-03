@@ -10,15 +10,23 @@ export default {
   name: "ProfileView",
   methods: {
     logout() {
+      axios.defaults.headers.common["Authorization"] =
+        "Token " + localStorage.getItem("token");
+
       axios
         .post("http://127.0.0.1:8000/auth/token/logout")
 
         .then(() => {
           localStorage.removeItem("token");
-          axios.defaults.headers.common["Authorization"] = "";
+          localStorage.removeItem("isAuthenticated");
+
           this.$store.commit("removeToken");
+
+          axios.defaults.headers.common["Authorization"] = "";
+
           alert("로그아웃 되었습니다.");
-          this.$router.push("/");
+
+          this.$router.push("/login");
         })
 
         .catch((error) => {
