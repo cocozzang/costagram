@@ -1,5 +1,4 @@
 <template>
-  <!-- feed start -->
   <div class="d-flex flex-column mt-4 mb-4">
     <div class="card">
       <!-- feed-header start -->
@@ -27,7 +26,7 @@
       <div class="card-body p-0">
         <!-- feed-body-image start -->
         <div class="ratio" style="--bs-aspect-ratio: 125%">
-          <img src="@/assets/image/summer-jacket2.jpg" alt="photo" />
+          <img :src="feed.get_image" alt="photo" />
         </div>
         <!-- feed-body-image end -->
 
@@ -105,12 +104,9 @@
         <!-- feed-content start -->
         <div class="ps-3 pe-3 pb-2">
           <strong class="d-block">123 likes</strong>
-          <strong>coco</strong>
+          <strong>coco </strong>
           <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            minus, tempore eaque dolorem officiis velit aut quaerat alias,
-            voluptate rerum eos error aliquid. Nobis omnis optio qui
-            accusantium. Nobis, doloribus.
+            {{ feed.description }}
           </span>
           <button class="btn p-0 d-block">
             <span class="text-muted"> View all varialble comments </span>
@@ -144,12 +140,14 @@
       <!-- feed-content end -->
     </div>
   </div>
-  <!-- feed end -->
 </template>
 
 <script>
 export default {
   name: "FeedCard",
+  props: {
+    feed: Object,
+  },
 };
 </script>
 
