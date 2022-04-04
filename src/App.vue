@@ -13,6 +13,16 @@ export default {
   components: {
     NavBar,
   },
+  beforeMount() {
+    this.islogin();
+  },
+  methods: {
+    islogin() {
+      if (!localStorage.getItem("isAuthenticated")) {
+        this.$router.push("/login");
+      }
+    },
+  },
 };
 </script>
 

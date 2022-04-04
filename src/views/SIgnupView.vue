@@ -5,8 +5,8 @@
   >
     <div class="col-9">
       <div class="d-flex justify-content-between">
-        <h3>로그인</h3>
-        <router-link to="/signup"><p>회원가입</p></router-link>
+        <h3>회원가입</h3>
+        <router-link to="/login"><p>로그인</p></router-link>
       </div>
       <form @submit.prevent="submitform">
         <div class="mb-3">
@@ -41,9 +41,8 @@
 
 <script>
 import axios from "axios";
-
 export default {
-  name: "LoginView",
+  name: "SignupView",
   data() {
     return {
       username: "",
@@ -60,26 +59,20 @@ export default {
         password: this.password,
       };
       axios
-        .post("http://127.0.0.1:8000/auth/token/login/", formData)
-        .then((response) => {
-          const token = response.data.auth_token;
-          this.$store.commit("setToken", token);
-          axios.defaults.headers.common["Authorization"] = "Token " + token;
-          localStorage.setItem("token", token);
-          localStorage.setItem("isAuthenticated", true);
+        .post("http://127.0.0.1:8000/auth/users/", formData)
+        .then(() => {
+          alert("회원가입 됨 ㅇㅇ 0ㅅ0");
 
-          this.$router.push("/");
+          this.$router.push("/login");
         })
         .catch((error) => {
           if (error.response) {
             for (const property in error.response.data) {
               this.errors.push(`${property}: ${error.response.data[property]}`);
-              alert("로그인 실패");
             }
           } else {
             this.errors.push("Something went wrong. Please try again");
             console.log(JSON.stringify(error));
-            alert("로그인 실패");
           }
         });
     },
