@@ -131,6 +131,8 @@ export default {
   },
   methods: {
     getFeedList() {
+      axios.defaults.headers.common["Authorization"] =
+        "Token " + localStorage.getItem("token");
       axios
         .get("http://127.0.0.1:8000/api/v1/")
         .then((response) => {

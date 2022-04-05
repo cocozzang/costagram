@@ -1,5 +1,6 @@
 <template>
   <NavBar />
+  <PostModal />
   <div class="mt-5 pt-5">
     <router-view />
   </div>
@@ -7,11 +8,13 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
+import PostModal from "@/components/PostModal.vue";
 
 export default {
   name: "App",
   components: {
     NavBar,
+    PostModal,
   },
   beforeMount() {
     this.islogin();
