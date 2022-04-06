@@ -10,19 +10,16 @@
       </div>
       <form @submit.prevent="submitform">
         <div class="mb-3">
-          <label for="username" class="form-label">user name</label>
+          <label for="username" class="form-label ms-2">ID</label>
           <input
             type="text"
             class="form-control"
             id="username"
             v-model="username"
           />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <label for="password" class="form-label ms-2">Password</label>
           <input
             type="password"
             class="form-control"

@@ -10,25 +10,75 @@
       </div>
       <form @submit.prevent="submitform">
         <div class="mb-3">
-          <label for="username" class="form-label">user name</label>
+          <label for="username" class="form-label ms-2">ID</label>
           <input
             type="text"
             class="form-control"
             id="username"
-            v-model="username"
+            v-model="form.username"
           />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
+
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <label for="password" class="form-label ms-2">Password</label>
           <input
             type="password"
             class="form-control"
             id="password"
             autocomplete="on"
-            v-model="password"
+            v-model="form.password"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="nickname" class="form-label ms-2">nickname</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nickname"
+            v-model="form.nickname"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label ms-2">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            v-model="form.email"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="first_name" class="form-label ms-2">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="first_name"
+            v-model="form.firs_tname"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="last_name" class="form-label ms-2">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="last_name"
+            v-model="form.last_name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="lastname" class="form-label ms-2">Profile image</label>
+          <input
+            type="file"
+            class="form-control"
+            name="profileimage"
+            id="profileimage"
+            ref="profileimage"
+            @change="imageUpload"
           />
         </div>
         <button type="submit" class="btn btn-primary" @click="submitForm()">
@@ -45,8 +95,14 @@ export default {
   name: "SignupView",
   data() {
     return {
-      username: "",
-      password: "",
+      form: {
+        username: "",
+        password: "",
+        nickname: "",
+        email: "",
+        first_name: "",
+        last_name: "",
+      },
       errors: [],
     };
   },
@@ -54,12 +110,26 @@ export default {
     submitForm() {
       axios.defaults.headers.common["Authorization"] = "";
       localStorage.removeItem("token");
-      const formData = {
-        username: this.username,
-        password: this.password,
+
+      const formdata = new FormData();
+      formdata.append("username", this.form.username);
+      formdata.append("password", this.form.password);
+      formdata.append("email", this.form.email);
+      formdata.append("nickname", this.form.nickname);
+      formdata.append("first_name", this.form.firs_tname);
+      formdata.append("last_name", this.form.last_name);
+      formdata.append("profile_image", this.form.profileimage);
+
+      const config = {
+        headers: {
+          "content-Type": "multipart/form-data",
+        },
       };
+
+      console.log(formdata.nickname);
+
       axios
-        .post("http://127.0.0.1:8000/auth/users/", formData)
+        .post("http://127.0.0.1:8000/auth/users/", formdata, config)
         .then(() => {
           alert("회원가입 됨 ㅇㅇ 0ㅅ0");
 
@@ -75,6 +145,9 @@ export default {
             console.log(JSON.stringify(error));
           }
         });
+    },
+    imageUpload() {
+      this.form.profileimage = this.$refs.profileimage.files[0];
     },
   },
 };

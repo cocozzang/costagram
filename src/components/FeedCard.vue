@@ -8,13 +8,8 @@
             class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-2 border-danger me-3 feed-profile-photo"
           >
             <img
-              src="@/assets/cat1.jpg"
-              style="
-                transform: scale(1.5);
-                width: 100%;
-                position: absolute;
-                left: 0;
-              "
+              src="@/assets/image/useravatar.jpg"
+              style="width: 100%; position: absolute; left: 0"
             />
           </div>
           <span class="fw-bold">cat1</span>
