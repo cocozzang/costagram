@@ -81,8 +81,8 @@
             @change="imageUpload"
           />
         </div>
-        <button type="submit" class="btn btn-primary" @click="submitForm()">
-          Log in
+        <button type="submit" class="btn btn-primary" @click="submitForm">
+          Sign up
         </button>
       </form>
     </div>
@@ -102,6 +102,7 @@ export default {
         email: "",
         first_name: "",
         last_name: "",
+        profileimage: "",
       },
       errors: [],
     };

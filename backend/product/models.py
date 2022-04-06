@@ -10,6 +10,8 @@ class User(AbstractUser):
     profile_image = models.ImageField(upload_to='uploads/profile', blank=True, null=True)
     profile_thumbnail = models.ImageField(upload_to='uploads/profile', blank=True, null=True)
 
+    REQUIRED_FIELDS = ['nickname', 'get_profile_thumbnail']
+
     def __str__(self):
         return f'{self.nickname}'
 
@@ -36,7 +38,7 @@ class User(AbstractUser):
         thumb_io = BytesIO()
         img.save(thumb_io, 'JPEG', quality=85)
 
-        profile_thumbnail = File(thumb_io)
+        profile_thumbnail = File(thumb_io, name=profile_image.name)
 
         return profile_thumbnail
 
