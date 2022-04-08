@@ -21,6 +21,7 @@ export default {
           localStorage.removeItem("isAuthenticated");
 
           this.$store.commit("removeToken");
+          this.$store.commit("removeUserInfo");
 
           axios.defaults.headers.common["Authorization"] = "";
 

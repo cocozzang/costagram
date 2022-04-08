@@ -65,7 +65,8 @@ export default {
           localStorage.setItem("token", token);
           localStorage.setItem("isAuthenticated", true);
 
-          this.$router.push({ name: "FeedView" });
+          // this.$router.push({ name: "FeedView" });
+          this.getProfileInfo();
         })
         .catch((error) => {
           if (error.response) {
@@ -78,6 +79,30 @@ export default {
             console.log(JSON.stringify(error));
             alert("로그인 실패");
           }
+        });
+    },
+    getProfileInfo() {
+      axios.defaults.headers.common["Authorization"] =
+        "Token " + localStorage.getItem("token");
+      axios
+        .get("http://127.0.0.1:8000/auth/users/me/")
+        .then((response) => {
+          const id = response.data.id;
+          const username = response.data.username;
+          const nickname = response.data.nickname;
+          const profile_thumbnail = response.data.get_profile_thumbnail;
+
+          this.$store.commit("setUserInfo", {
+            id,
+            username,
+            nickname,
+            profile_thumbnail,
+          });
+
+          this.$router.push({ name: "FeedView" });
+        })
+        .catch((error) => {
+          console.log(error);
         });
     },
   },

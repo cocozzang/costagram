@@ -24,7 +24,7 @@ const routes = [
     ],
   },
   {
-    path: "/authentication",
+    path: "/auth",
     component: () =>
       import(
         /* webpackChunkName: "layouts-default-login" */
