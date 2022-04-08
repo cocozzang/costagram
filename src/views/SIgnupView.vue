@@ -6,7 +6,7 @@
     <div class="col-9">
       <div class="d-flex justify-content-between">
         <h3>회원가입</h3>
-        <router-link to="/login"><p>로그인</p></router-link>
+        <router-link to="/authentication/log-in"><p>로그인</p></router-link>
       </div>
       <form @submit.prevent="submitform">
         <div class="mb-3">
@@ -134,7 +134,7 @@ export default {
         .then(() => {
           alert("회원가입 됨 ㅇㅇ 0ㅅ0");
 
-          this.$router.push("/login");
+          this.$router.push({ name: "LoginView" });
         })
         .catch((error) => {
           if (error.response) {

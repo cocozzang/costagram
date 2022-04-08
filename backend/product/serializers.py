@@ -1,8 +1,9 @@
 from rest_framework import serializers
 
-from .models import Feed
+from .models import Feed, User
 
-from djoser.serializers import UserCreateSerializer as BaseUserRegistrationSerializer
+from djoser.serializers import UserCreateSerializer as BaseUserRegistrationSerializer, TokenSerializer
+
 
 class FeedSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,6 +17,8 @@ class FeedSerializer(serializers.ModelSerializer):
             "get_image",
         )
 
+# djoser/serializers.py에서 settings.py의 AUTH_USER_MODEL = 'product.User' model을 참조
+# djoser BaseUserRegistrationSerializer를 상속받아 product.User와 맵핑된 field 추가
 class UserRegistrationSerializer(BaseUserRegistrationSerializer):
     class Meta(BaseUserRegistrationSerializer.Meta):
         fields = (
