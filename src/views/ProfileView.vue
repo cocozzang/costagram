@@ -26,7 +26,7 @@ export default {
 
           alert("로그아웃 되었습니다.");
 
-          this.$router.push("/login");
+          this.$router.push({ name: "LoginView" });
         })
 
         .catch((error) => {
