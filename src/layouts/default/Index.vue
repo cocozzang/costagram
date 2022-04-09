@@ -1,8 +1,10 @@
 <template>
-  <NavBar />
-  <PostModal />
-  <div class="mt-5 pt-5">
-    <DefaultView />
+  <div class="container">
+    <NavBar />
+    <PostModal />
+    <div class="mt-5 pt-5">
+      <DefaultView />
+    </div>
   </div>
 </template>
 

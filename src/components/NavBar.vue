@@ -125,9 +125,20 @@
                     class="rounded-circle overflow-hidden d-flex justify-content-conter align-items-center topbar-profile-photo"
                   >
                     <img
-                      src="@/assets/cat1.jpg"
+                      v-if="this.$store.state.userInfo.profile_thumbnail"
+                      :src="this.$store.state.userInfo.profile_thumbnail"
                       style="
-                        transform: scale(1.5);
+                        transform: scale(1);
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                      "
+                    />
+                    <img
+                      v-else
+                      src="@/assets/image/useravatar.jpg"
+                      style="
+                        transform: scale(1);
                         width: 100%;
                         position: absolute;
                         left: 0;

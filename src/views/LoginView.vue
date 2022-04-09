@@ -6,7 +6,7 @@
     <div class="col-9">
       <div class="d-flex justify-content-between">
         <h3>로그인</h3>
-        <router-link to="/authentication/sign-up"><p>회원가입</p></router-link>
+        <router-link :to="{ name: 'SignupView' }"><p>회원가입</p></router-link>
       </div>
       <form @submit.prevent="submitform">
         <div class="mb-3">
