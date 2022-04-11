@@ -13,7 +13,7 @@ class User(AbstractUser):
     profile_thumbnail = models.ImageField(upload_to='uploads/profile', blank=True, null=True)
 
     #
-    REQUIRED_FIELDS = ['nickname', 'get_profile_thumbnail']
+    REQUIRED_FIELDS = ['nickname', 'get_profile_thumbnail', 'first_name', 'last_name']
 
     def __str__(self):
         return f'{self.nickname}'

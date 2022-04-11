@@ -50,7 +50,7 @@
                 class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border side-profile-photo me-3"
               >
                 <img
-                  src="@/assets/cat1.jpg"
+                  :src="this.$store.state.userInfo.profile_thumbnail"
                   style="
                     transform: scale(1.5);
                     width: 100%;
@@ -61,8 +61,13 @@
               </div>
 
               <div class="profile-info">
-                <span class="profile-info-userid">coco</span>
-                <span class="profile-info-name text-muted">chuchu</span>
+                <span class="profile-info-userid">{{
+                  this.$store.state.userInfo.nickname
+                }}</span>
+                <span class="profile-info-name text-muted"
+                  >{{ this.$store.state.userInfo.lastname
+                  }}{{ this.$store.state.userInfo.firstname }}</span
+                >
               </div>
             </div>
             <button class="btn btn-primary btn-sm p-0 btn-ig">Switch</button>

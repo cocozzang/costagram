@@ -90,12 +90,16 @@ export default {
           const id = response.data.id;
           const username = response.data.username;
           const nickname = response.data.nickname;
+          const firstname = response.data.first_name;
+          const lastname = response.data.last_name;
           const profile_thumbnail = response.data.get_profile_thumbnail;
 
           this.$store.commit("setUserInfo", {
             id,
             username,
             nickname,
+            firstname,
+            lastname,
             profile_thumbnail,
           });
 

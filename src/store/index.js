@@ -9,6 +9,8 @@ export default createStore({
       id: "",
       username: "",
       nickname: "",
+      firstname: "",
+      lastname: "",
       profile_thumbnail: "",
     },
   },
@@ -22,10 +24,15 @@ export default createStore({
       state.token = "";
       state.isAuthenticated = false;
     },
-    setUserInfo(state, { id, username, nickname, profile_thumbnail }) {
+    setUserInfo(
+      state,
+      { id, username, nickname, firstname, lastname, profile_thumbnail }
+    ) {
       state.userInfo.id = id;
       state.userInfo.username = username;
       state.userInfo.nickname = nickname;
+      state.userInfo.firstname = firstname;
+      state.userInfo.lastname = lastname;
       state.userInfo.profile_thumbnail = profile_thumbnail;
     },
     removeUserInfo(state) {
