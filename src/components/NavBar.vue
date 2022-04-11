@@ -128,7 +128,7 @@
                       v-if="this.$store.state.userInfo.profile_thumbnail"
                       :src="this.$store.state.userInfo.profile_thumbnail"
                       style="
-                        transform: scale(1);
+                        transform: scale(1.5);
                         width: 100%;
                         position: absolute;
                         left: 0;

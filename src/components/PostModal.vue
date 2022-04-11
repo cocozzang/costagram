@@ -71,6 +71,7 @@ export default {
       this.errors = [];
 
       const formdata = new FormData();
+      formdata.append("profile", this.$store.state.userInfo.id);
       formdata.append("description", this.form.description);
       formdata.append("image", this.form.image);
 

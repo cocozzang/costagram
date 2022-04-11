@@ -15,6 +15,7 @@ class FeedSerializer(serializers.ModelSerializer):
             "image",
             "get_absolute_url",
             "get_image",
+            "get_feed_poster",
         )
 
 # djoser/serializers.py에서 settings.py의 AUTH_USER_MODEL = 'product.User' model을 참조

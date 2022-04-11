@@ -4,6 +4,8 @@ from PIL import Image
 from django.core.files import File
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db.models import CASCADE
+
 
 class User(AbstractUser):
     nickname = models.CharField(max_length=20)
@@ -44,7 +46,7 @@ class User(AbstractUser):
         return profile_thumbnail
 
 class Feed(models.Model):
-    profile = models.ManyToManyField(User)
+    profile = models.ForeignKey(User, on_delete=CASCADE)
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     date_posted = models.DateTimeField(auto_now_add=True)
@@ -62,3 +64,10 @@ class Feed(models.Model):
         if self.image:
             return 'http://127.0.0.1:8000' + self.image.url
         return ''
+
+    def get_feed_poster(self):
+        poster = [
+            {'poster_thumbnail': self.profile.get_profile_thumbnail()},
+            {'poster_nickname': self.profile.nickname}
+        ]
+        return poster
