@@ -8,11 +8,19 @@
             class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-2 border-danger me-3 feed-profile-photo"
           >
             <img
-              src="@/assets/image/useravatar.jpg"
-              style="width: 100%; position: absolute; left: 0"
+              :src="feed.get_feed_poster.poster_thumbnail"
+              alt="photo"
+              style="
+                transform: scale(1.5);
+                width: 100%;
+                position: absolute;
+                left: 0;
+              "
             />
           </div>
-          <span class="fw-bold">cat1</span>
+          <span class="fw-bold">{{
+            feed.get_feed_poster.poster_nickname
+          }}</span>
         </div>
       </div>
       <!-- feed-header end -->

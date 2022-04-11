@@ -15,6 +15,7 @@ class FeedSerializer(serializers.ModelSerializer):
             "image",
             "get_absolute_url",
             "get_image",
+            "profile",
             "get_feed_poster",
         )
 

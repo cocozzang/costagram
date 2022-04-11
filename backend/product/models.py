@@ -66,8 +66,10 @@ class Feed(models.Model):
         return ''
 
     def get_feed_poster(self):
-        poster = [
-            {'poster_thumbnail': self.profile.get_profile_thumbnail()},
-            {'poster_nickname': self.profile.nickname}
-        ]
+        poster = {
+            'poster_id': self.profile.id,
+            'poster_nickname': self.profile.nickname,
+            'poster_thumbnail': self.profile.get_profile_thumbnail(),
+        }
+
         return poster

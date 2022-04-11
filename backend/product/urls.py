@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import  FeedList, FeedDetail
+from .views import FeedList, FeedDetail
 
 urlpatterns = [
     path('', FeedList.as_view()),
