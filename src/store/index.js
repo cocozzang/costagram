@@ -39,6 +39,8 @@ export default createStore({
       state.userInfo.id = "";
       state.userInfo.username = "";
       state.userInfo.nickname = "";
+      state.userInfo.firstname = "";
+      state.userInfo.lastname = "";
       state.userInfo.profile_thumbnail = "";
     },
   },

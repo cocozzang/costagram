@@ -112,8 +112,15 @@
             {{ feed.description }}
           </span>
           <button class="btn p-0 d-block">
-            <span class="text-muted"> View all varialble comments </span>
+            <span
+              class="text-muted"
+              data-bs-toggle="modal"
+              data-bs-target="#FeedModal"
+            >
+              View all varialble comments
+            </span>
           </button>
+          <FeedModal />
           <!-- feed-comments-views start -->
           <div>
             <div class="mb-1">
@@ -146,11 +153,22 @@
 </template>
 
 <script>
+import FeedModal from "@/components/FeedModal.vue";
 export default {
   name: "FeedCard",
+  data() {
+    return {
+      feedData: this.feed,
+    };
+  },
   props: {
     feed: Object,
   },
+
+  components: {
+    FeedModal,
+  },
+  methods: {},
 };
 </script>
 

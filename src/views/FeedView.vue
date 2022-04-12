@@ -76,8 +76,8 @@ export default {
 }
 
 .feed-profile-photo {
-  width: 46px;
-  height: 46px;
+  width: 32px;
+  height: 32px;
   position: relative;
 }
 
