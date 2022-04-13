@@ -27,7 +27,7 @@
                   <div class="row justify-content-start">
                     <div class="col-2 ps-2">
                       <div
-                        class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-2 border-danger me-3 feed-profile-photo"
+                        class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border me-3 feed-profile-photo"
                       >
                         <img
                           src="@/assets/cat1.jpg"
@@ -42,8 +42,13 @@
                       </div>
                     </div>
 
-                    <div class="col-3 p-0">
-                      <div><span style="font-size: 80%">• Following</span></div>
+                    <div class="col-6 p-0">
+                      <div>
+                        <span class="fw-bold" style="font-size: 80%">coco</span
+                        ><span class="fw-bold" style="font-size: 80%">
+                          • Following</span
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -54,7 +59,7 @@
                   <div class="row justify-content-start pb-2">
                     <div class="col-2 ps-2">
                       <div
-                        class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-2 border-danger me-3 feed-profile-photo"
+                        class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border me-3 feed-profile-photo"
                       >
                         <img
                           src="@/assets/cat1.jpg"
@@ -69,8 +74,12 @@
                       </div>
                     </div>
 
-                    <div class="col-3 p-0">
-                      <div><span style="font-size: 80%">description</span></div>
+                    <div class="col-8 p-0">
+                      <div>
+                        <span style="font-size: 80%"
+                          >nickname: description</span
+                        >
+                      </div>
                     </div>
                   </div>
                   <!-- feed description field end -->
@@ -78,7 +87,7 @@
                   <div class="row justify-content-start pb-2">
                     <div class="col-2 ps-2">
                       <div
-                        class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-2 border-danger me-3 feed-profile-photo"
+                        class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border me-3 feed-profile-photo"
                       >
                         <img
                           src="@/assets/cat1.jpg"
@@ -93,8 +102,10 @@
                       </div>
                     </div>
 
-                    <div class="col-3 p-0">
-                      <div><span style="font-size: 80%">comment</span></div>
+                    <div class="col-8 p-0">
+                      <div>
+                        <span style="font-size: 80%">nickname : comment</span>
+                      </div>
                     </div>
                   </div>
                   <!-- feed comment field end -->

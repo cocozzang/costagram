@@ -73,3 +73,36 @@ class Feed(models.Model):
         }
 
         return poster
+
+class Comment(models.Model):
+    comment_profile = models.ForeignKey(User, on_delete=CASCADE)
+    feed_id = models.ForeignKey(Feed, on_delete=CASCADE)
+    content = models.CharField(max_length=200)
+    date_comment = models.DateTimeField(auto_now_add=True)
+
+# 댓글작성자
+# feed id
+# 댓글내용
+# 작성시간
+# reply
+# 좋아요 =>
+
+class CommentReply(models.Model):
+    pass
+# user
+# comment id
+# reply content
+
+class LikeFeed(models.Model):
+    pass
+# user
+# feed id
+# likes_feed
+
+class LikeComment(models.Model):
+    pass
+# user
+# comment id
+# likes_comment
+
+

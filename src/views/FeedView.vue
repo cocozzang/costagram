@@ -43,7 +43,7 @@ export default {
     SideBar,
     FeedCard,
   },
-  mounted() {
+  created() {
     this.getFeedList();
   },
   methods: {

@@ -5,7 +5,7 @@
       <div class="card-header bg-white">
         <div class="d-flex flex-row align-items-center">
           <div
-            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-2 border-danger me-3 feed-profile-photo"
+            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border me-3 feed-profile-photo"
           >
             <img
               :src="feed.get_feed_poster.poster_thumbnail"

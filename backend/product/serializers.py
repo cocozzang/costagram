@@ -35,3 +35,7 @@ class UserRegistrationSerializer(BaseUserRegistrationSerializer):
             "get_absolute_url",
             "get_profile_thumbnail",
         )
+
+class FeedDetailSerializer(serializers.ModelSerializer):
+    pass
+# serializer에 feed , comment model 병합 response할 field 정하기
